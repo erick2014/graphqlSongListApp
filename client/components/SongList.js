@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { graphql, compose } from "react-apollo"
 import { Link } from 'react-router'
-import { getSongs } from '../queries/getSongs'
-import { deleteSong } from '../queries/deleteSong'
+import { hashHistory } from 'react-router'
 
+import { getSongs, deleteSong } from '../queries/songQueries'
 class SongList extends Component {
 
     handleDeleteSong(id) {
@@ -11,6 +11,10 @@ class SongList extends Component {
             variables: { id },
             refetchQueries: [{ query: getSongs }]
         })
+    }
+
+    goToSongDetail(songId) {
+        hashHistory.push(`song/${songId}`)
     }
 
     buildSongs() {
@@ -21,7 +25,7 @@ class SongList extends Component {
         }
         return songs.map(({ id, title }, index) => {
             return (
-                <li key={index} className="collection-item">
+                <li key={index} className="collection-item" onClick={() => this.goToSongDetail(id)}>
                     <span>{title}</span>
                     <i className="material-icons" onClick={() => { this.handleDeleteSong(id) }}>
                         delete
@@ -32,9 +36,10 @@ class SongList extends Component {
     }
 
     render() {
-        console.log('current props ', this.props)
         const { getSongsList: { loading } } = this.props
+
         if (loading) return <div>Loading...</div>
+
         return (
             <div>
                 <ul className="collection">

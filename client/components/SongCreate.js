@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo';
 import { Link, hashHistory } from 'react-router'
-import { getSongs } from '../queries/getSongs'
-import { createSong } from '../queries/createSong'
+import { getSongs, createSong } from '../queries/songQueries'
 
 class SongCreate extends Component {
     constructor(props) {
