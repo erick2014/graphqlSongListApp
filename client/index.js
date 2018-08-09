@@ -12,7 +12,7 @@ import './style/style.css'
 
 // components
 import App from './components/App.js'
-import SongList from './components/SongList'
+import SongList from './components/SongList/index'
 import SongCreate from './components/SongCreate'
 import SongDetail from './components/SongDetail/index'
 
