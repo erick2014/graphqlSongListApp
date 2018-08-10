@@ -13,3 +13,11 @@
 .collection-item-left-side{
     width: 100%;
 }
+.likes-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.likes-container span {
+    margin-right: 10px
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getSong, addLyricToSong } from '../../queries/songQueries'
 import { Mutation } from 'react-apollo';
 
-const CreateLyric = props => {
+const BuildCreateLyricForm = props => {
     const {
         lyricContent,
         changeContent,
@@ -30,8 +30,7 @@ const CreateLyric = props => {
                 );
             }}
         </Mutation>
-
     )
 }
 
-export default CreateLyric
+export default BuildCreateLyricForm

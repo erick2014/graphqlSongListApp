@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import BuildLyricsList from './LyricsList'
-import CreateLyric from './CreateLyric'
+import BuildCreateLyricForm from './CreateLyric'
 
 class SongDetail extends Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class SongDetail extends Component {
             <div>
                 <Link to="/">Back</Link>
                 <BuildLyricsList id={songId} />
-                <CreateLyric
+                <BuildCreateLyricForm
                     clearField={this.handleClearField}
                     lyricContent={lyricContent}
                     changeContent={this.changeContent}

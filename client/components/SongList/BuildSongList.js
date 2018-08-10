@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
-import { Query } from "react-apollo"
-import { getSongs } from '../../queries/songQueries'
+import { Query, Mutation } from "react-apollo"
+import { getSongs, deleteSong } from '../../queries/songQueries'
 
+const DeleteSong = ({ songId }) => (
+    <Mutation mutation={deleteSong}>
+        {(deleteSong) => {
+            return (
+                <div>
+                    <i
+                        className="material-icons"
+                        onClick={() => { deleteSong({ variables: { id: songId } }) }}>
+                        delete
+                    </i>
+                </div>
+            );
+        }}
+    </Mutation>
+)
 
 const BuildSongsList = (props) => {
     const {
@@ -31,13 +46,7 @@ const BuildSongsList = (props) => {
                                             onClick={() => { goToSongDetail(id) }}>
                                             {title}
                                         </div>
-                                        <div>
-                                            <i
-                                                className="material-icons"
-                                                onClick={event => { handleDeleteSong(event, id) }}>
-                                                delete
-                                            </i>
-                                        </div>
+                                        <DeleteSong songId={id} />
                                     </li>
                                 )
                             })
