@@ -16,9 +16,13 @@ import SongList from './components/SongList/index'
 import SongCreate from './components/SongCreate'
 import SongDetail from './components/SongDetail/index'
 
+const cache = new InMemoryCache({
+  dataIdFromObject: obj => obj.id
+})
+
 const client = new ApolloClient({
   link: new HttpLink(),
-  cache: new InMemoryCache(),
+  cache
 })
 
 const Root = () => {

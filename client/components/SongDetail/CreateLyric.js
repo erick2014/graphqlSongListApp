@@ -10,24 +10,8 @@ const CreateLyric = props => {
         clearField
     } = props
 
-    const updateCacheInfo = (cache, addLyricToSong) => {
-        const { song } = cache.readQuery({ query: getSong, variables: { id: songId } })
-        const lyricsLength = addLyricToSong.lyrics.length
-        const newLyric = addLyricToSong.lyrics[lyricsLength - 1];
-        cache.writeQuery({
-            query: getSong,
-            data: Object.assign({}, song, {
-                lyrics: song.lyrics.concat(newLyric)
-            })
-        });
-    }
-
     return (
-        <Mutation
-            mutation={addLyricToSong}
-            update={(cache, { data: { addLyricToSong } }) => {
-                updateCacheInfo(cache, addLyricToSong)
-            }}>
+        <Mutation mutation={addLyricToSong}>
             {(addLyricToSong, data) => {
                 return (
                     <div className={"add-lyric-to-song-container"}>
