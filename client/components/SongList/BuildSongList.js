@@ -1,28 +1,7 @@
 import React, { Component } from 'react';
 import { Query, Mutation } from "react-apollo"
 import { getSongs, deleteSong } from '../../queries/songQueries'
-
-const DeleteSong = ({ songId }) => {
-    return (
-        <Mutation
-            refetchQueries
-            mutation={deleteSong}
-            refetchQueries={(result) => [{ query: getSongs }]}>
-            {(deleteSong) => {
-                return (
-                    <div>
-                        <i
-                            className="material-icons"
-                            onClick={() => { deleteSong({ variables: { id: songId } }) }}>
-                            delete
-                        </i>
-                    </div>
-                );
-            }}
-        </Mutation>
-
-    )
-}
+import BuildDeleteSongIcon from './BuildDeleteSongIcon'
 
 const BuildSongsList = (props) => {
     const {
@@ -31,7 +10,7 @@ const BuildSongsList = (props) => {
 
     return (
         <Query query={getSongs} >
-            {({ loading, error, data }) => {
+            {({ data }) => {
                 const { songs } = data
 
                 if (!songs || !songs.length) {
@@ -51,7 +30,7 @@ const BuildSongsList = (props) => {
                                             onClick={() => { goToSongDetail(id) }}>
                                             {title}
                                         </div>
-                                        <DeleteSong songId={id} />
+                                        <BuildDeleteSongIcon songId={id} />
                                     </li>
                                 )
                             })
