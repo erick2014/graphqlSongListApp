@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { addLyricToSong } from '../../queries/songQueries'
 import { Mutation } from 'react-apollo';
 
