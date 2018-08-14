@@ -45,16 +45,17 @@ export const createSong = gql`
 `
 
 export const addLyricToSong = gql`
-    mutation AddLyricToSong($content:String,$songId:ID){
-        addLyricToSong(content:$content,songId:$songId){
-            id
-            title
-            lyrics{
-                id
-                content
-            }
-        }
-    }
+ mutation AddLyricToSong($content:String,$songId:ID){
+  addLyricToSong(content:$content,songId:$songId){
+   id
+   title
+   lyrics{
+    id
+    content
+    likes
+  }
+ }
+}
 `
 
 export const likeLyric = gql`
