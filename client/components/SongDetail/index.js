@@ -8,8 +8,7 @@ class SongDetail extends Component {
         super(props);
         this.state = {
             lyricContent: '',
-            songId: '',
-            fetching: false,
+            songId: ''
         }
         this.changeContent = this.changeContent.bind(this);
         this.handleClearField = this.handleClearField.bind(this);
