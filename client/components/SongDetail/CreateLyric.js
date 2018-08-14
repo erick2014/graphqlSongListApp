@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getSong, addLyricToSong } from '../../queries/songQueries'
+import { addLyricToSong } from '../../queries/songQueries'
 import { Mutation } from 'react-apollo';
 
 const BuildCreateLyricForm = props => {
@@ -11,8 +11,9 @@ const BuildCreateLyricForm = props => {
     } = props
 
     return (
-        <Mutation mutation={addLyricToSong}>
-            {(addLyricToSong, data) => {
+        <Mutation
+            mutation={addLyricToSong}>
+            {(addLyricToSong) => {
                 return (
                     <div className={"add-lyric-to-song-container"}>
                         <form onSubmit={(e) => {
