@@ -36,7 +36,7 @@ const Root = () => {
           <IndexRoute component={HomePage} />
           <Route path="signIn" component={AuthForm} />
           <Route path="signUp" component={AuthForm} />
-          <Route path="songs" component={SongCreate} />
+          <Route path="songs" component={SongList} />
           <Route path="songs/new" component={SongCreate} />
           <Route path="song/:songId" component={SongDetail} />
         </Route>
