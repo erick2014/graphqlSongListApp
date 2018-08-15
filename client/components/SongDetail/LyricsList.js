@@ -35,7 +35,6 @@ const BuildLyricsList = ({ id }) => {
                     </div>
                 );
             }}
-
         </Query>
     )
 }

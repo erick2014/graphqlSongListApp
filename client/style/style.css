@@ -23,3 +23,24 @@
 .likes-container span {
     margin-right: 10px
 }
+
+.home-page-btns-bar{
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home-page-btns-bar .sign-up-btn{
+    margin-right: 20px;
+}
+
+.auth-form-container .sign-up-field-box{
+    margin: 20px 0;
+}
+
+.auth-form-container .sign-up-title{
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
