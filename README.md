@@ -1,2 +1,2 @@
-# Lyrical-GraphQL
-Starter project from a GraphQL course on Udemy.com
+# SONG LIST APP
+Song list app made using graphql, apollo and react
