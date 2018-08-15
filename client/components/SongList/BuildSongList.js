@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Query, Mutation } from "react-apollo"
-import { getSongs, deleteSong } from '../../queries/songQueries'
+import React from 'react';
+import { Query } from "react-apollo"
+import { getSongs } from '../../queries/songQueries'
 import BuildDeleteSongIcon from './BuildDeleteSongIcon'
 
 const BuildSongsList = (props) => {
