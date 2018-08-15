@@ -25,7 +25,7 @@
 }
 
 .home-page-btns-bar{
-    padding: 20px 20px;
+    padding: 20px 0px;
     display: flex;
     justify-content: flex-end;
 }
